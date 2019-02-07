@@ -1,0 +1,20 @@
+---
+  hosts: all
+  
+  tasks:
+  - name: install the dependencies packages for WinRM
+    ignore_errors: yes
+    become: true
+    yum: pkg={{ item }} state=present
+    with_items:
+      - python-devel
+      - krb5-devel
+      - krb5-libs
+      - krb5-workstation
+      - python-pip
+      - gcc
+      - python2-winrm.noarch
+    
+  - name: Doing a Ping to a Windows Machine
+    hosts: ad-win-ellanos-1
+    - win_ping:  
