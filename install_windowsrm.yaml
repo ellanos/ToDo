@@ -1,6 +1,6 @@
 # Author: Myself
 ---
-- name: Playbook for install winrm dependencies in hosts
+- name: Playbook for install winrm dependencies in hosts and test conectivity
   hosts: all:!windows
 
   tasks:
