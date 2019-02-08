@@ -15,7 +15,7 @@
         - krb5-workstation
         - python-pip
         - gcc
-	- python2-winrm.noarch
+        - python2-winrm.noarch
       become: true
 
 - name: Doing a Ping to a Windows Machine
